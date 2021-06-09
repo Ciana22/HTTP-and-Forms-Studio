@@ -4,16 +4,57 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
-    window.addEventListener("load", function(){
-        // TODO: register the handler
+    window.addEventListener("load", function () {
+        // TODO: register the handler (create handler here instead)
+		let form = document.getElementById('searchForm');
+		// let actions = {
+		// 	"google" = 'https://www.google.com/search'
+		// 	"duckDuckGo" = 'https://duckduckgo.com/'
+		// 	'bing' = 'https://www.bing.com/search'
+		// 	'ask' = 'https://www.ask.com/web'
+		
+
+			form.addEventListener("submit", function () {
+							//<!--alert("Let's Find it!");can be used to test-->
+		let radioInputSelector = document.querySelector('input[name=engine]:checked');
+		let searchEngineURL = radioInputSelector.value;
+		// let	actionURL = actions[searchEngineChoice];
+		//alert(actionURL);
+		form.setAttribute('action', searchEngineURL);
+		})
     });
+
 	</script>
 </head>
 
 <body>
 
+
 	<form id="searchForm">
+		<input name= "q" type= "text" />       
+		
+		<label>
+			<input type= "radio" name= "engine" value= 'https://www.google.com/search'/>  
+			Google       
+		</label>
+
+		<label>
+			<input type= "radio" name= "engine" value= 'https://duckduckgo.com/'/>
+			DuckDuckGo
+		</label>
+
+		<label>
+			<input type= "radio" name= "engine" value= 'https://www.bing.com/search'/>
+			Bing
+		</label>
+
+		<label>
+			<input type= "radio" name= "engine" value= 'https://www.ask.com/web'/>
+			Ask
+		</label>
+
+		<input type="submit" value="Go!" />
     <!-- TODO: add form elements -->
 	</form>
 
-</body>
+</body> 
